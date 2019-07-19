@@ -1,0 +1,31 @@
+{
+  "name": "mintuiwebpack",
+  "version": "1.0.0",
+  "description": "webpack的ui框架-mint-ui",
+  "main": "main.js",
+  "scripts": {
+    "dev": "webpack-dev-server"
+  },
+  "author": "Gong",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "mint-ui": "^2.2.13",
+    "vue": "^2.6.10",
+    "vue-resource": "^1.5.1",
+    "vue-router": "^3.0.7"
+  },
+  "devDependencies": {
+    "css-loader": "^3.1.0",
+    "html-webpack-plugin": "^3.2.0",
+    "less-loader": "^5.0.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "url-loader": "^2.1.0",
+    "vue-loader": "^15.7.1",
+    "vue-template-compiler": "^2.6.10",
+    "webpack": "^4.36.1",
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.7.2"
+  }
+}
