@@ -3,12 +3,11 @@
     <!-- 轮播图 -->
     <mt-swipe :auto="4000">
       <!-- 在数组中使用v-for循环，一定要使用 key -->
-      <!-- <mt-swipe-item v-for="item in slidesList" :key="item.id"> -->
-           <!-- <img :src="item.img" /> -->
-        <!-- </mt-swipe> -->
-      <mt-swipe-item>
-       
-        <img src="../../images/180.jpg" alt />
+      <!-- <mt-swipe-item v-for="item in slidesList" :key="item.id"> 
+           <img :src="item.img" />
+      </mt-swipe-item> -->
+      <mt-swipe-item>       
+        <img src="../../images/121.jpg" alt />
       </mt-swipe-item>
       <mt-swipe-item>
         <img src="../../images/37.jpg" alt />
@@ -23,16 +22,16 @@
 
     <ul class="mui-table-view mui-grid-view mui-grid-9">
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-        <a href="#">
+        <router-link to="/home/newsList">
           <img src="../../images/menu1.png" alt />
           <div class="mui-media-body">新闻资讯</div>
-        </a>
+        </router-link>
       </li>
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-        <a href="#">
+        <router-link to='/home/photoList'>
           <img src="../../images/menu2.png" alt />
           <div class="mui-media-body">图片分享</div>
-        </a>
+        </router-link>
       </li>
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
         <a href="#">
@@ -77,9 +76,9 @@ export default {
   methods: {
     getSlides() {
       this.$http
-        .get("http://www.liulongbin.top:3005/api/getlunbo")
+        .get("api/getlunbo")
         .then(result => {
-          console.log(result.body);
+          // console.log(result.body);
           if (result.body.status === 0) {
             this.slidesList = result.body.message;
           } else {

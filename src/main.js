@@ -14,30 +14,50 @@ import './mui/css/icons-extra.css'
 
 
 //按需导入mint-ui中的组件
-import {Header} from 'mint-ui'
+import { Header } from 'mint-ui'
 Vue.component(Header.name, Header)//注册组件
 
 // import { Button } from 'mint-ui';
 // Vue.component(Button.name, Button);
 
-import { Swipe, SwipeItem } from 'mint-ui';
+import { Swipe, SwipeItem, Button } from 'mint-ui';
 Vue.component(Swipe.name, Swipe);
 Vue.component(SwipeItem.name, SwipeItem);
+Vue.component(Button.name, Button);
 
 //导入路由模块
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)//安装vue-resource
 
+//导入格式化事件的插件
+import moment from 'moment'
+//定义全局过滤器
+// Vue.filter('dataFormat', function (dataStr, pattern = 'YYYY-MM-DD HH:mm:ss') {
+//     var dt = new Date(dataStr)
+//     var y = dt.getFullYear()
+//     var m = (dt.getMonth() + 1).toString().padStart(2, '0')
+//     var d = (dt.getDate()).toString().padStart(2, '0')
+
+//     if (pattern.toLowerCase() == 'yyyy-mm-dd') {
+//         return `${y}-${m}-${d}`
+//     } else {
+//         var hh = (dt.getHours()).toString().padStart(2, '0')
+//         var mm = (dt.getMinutes()).toString().padStart(2, '0')
+//         var ss = (dt.getSeconds()).toString().padStart(2, '0')
+//         return `${y}-${m}-${d} ${hh}:${mm}:${ss}`
+//     }
+// })
+
+Vue.filter('dataFormat',function(val) {
+    return moment(val).format('YYYY-MM-DD HH:mm:ss')
+})
 //导入vue-resource
 import VueResource from 'vue-resource'
 Vue.use(VueResource)
 
-//导入less
-// import Less from 'less'
-// Vue.use(Less)
+Vue.http.options.root = 'http://www.liulongbin.top:3005'
+Vue.http.options.emulateJSON = true;//设置全局post请求根目录
 
-// import Url from 'url'
-// Vue.use(Url)
 
 //导入自己封装的router组件
 import router from './router.js'

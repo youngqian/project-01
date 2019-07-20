@@ -3,7 +3,13 @@
     <!-- 顶部区域 -->
     <mt-header fixed title="Vue项目Test"></mt-header>
     <!-- <mt-button type="danger">danger</mt-button> -->
-
+    <!-- <router-link to='/newsList'>
+      <header id="header" class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">导航栏</h1>
+		</header>
+    </router-link> -->
+   
     <!-- 主体区域 -->
 
     <!-- 底部区域 -->
@@ -36,12 +42,29 @@
 </template>
 
 <script>
+import mui from "./mui/js/mui.js"
+ export default {
+  mounted() {
+    //   恢复a元素的跳转
+    mui("nav").on('tap', 'a', function() {
+        mui.openWindow({
+            url: this.href
+        })
+    })
+  },
+
+};
 </script>
 
-<style scoped>
+<style scope>
+* {
+  touch-action: pan-y;
+}
+
 .container {
   padding-top: 40px;
   overflow-x: hidden;
+  padding-bottom: 60px;
 }
 .v-enter {
   opacity: 0;
