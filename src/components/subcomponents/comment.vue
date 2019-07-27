@@ -23,8 +23,6 @@
 
 import { Toast } from "mint-ui";
 
-import moment from 'moment';
-
 export default {
     props: ['id'],
     data() {

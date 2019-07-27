@@ -1,7 +1,10 @@
 <template>
   <div class="container">
     <!-- 顶部区域 -->
-    <mt-header fixed title="Vue项目Test"></mt-header>
+    <mt-header fixed title="Vue项目Test">
+      <!-- <div class="mint-header-button is-left"></div>
+      <div class="mint-header-button is-right"></div> -->
+    </mt-header>
     <!-- <mt-button type="danger">danger</mt-button> -->
     <!-- <router-link to='/newsList'>
       <header id="header" class="mui-bar mui-bar-nav">
@@ -25,7 +28,7 @@
       </router-link>
       <router-link class="mui-tab-item" to="/shopcar">
         <span class="mui-icon mui-icon-extra mui-icon-extra-cart">
-          <span class="mui-badge">0</span>
+          <span class="mui-badge" id='badge'>{{ $store.getters.getAllCount }}</span>
         </span>
         <span class="mui-tab-label">购物车</span>
       </router-link>
@@ -57,10 +60,12 @@ import mui from "./mui/js/mui.js"
 </script>
 
 <style scope>
+.mint-header.is-fixed{
+  z-index: 99;
+}
 * {
   touch-action: pan-y;
 }
-
 .container {
   padding-top: 40px;
   overflow-x: hidden;

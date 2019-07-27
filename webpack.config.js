@@ -13,8 +13,7 @@ module.exports = {
         contentBase: path.join(__dirname, "./src"),
         port: 3000,
         hot: true,
-        open: true
-        
+        open: true  
     },
     plugins: [
         // 插件：内存中创建页面
